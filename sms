@@ -1,0 +1,8 @@
+#!/bin/bash
+k=$1
+w=$2
+m=$3
+for i in `seq 1 $m`
+do
+adb shell am startservice --user 0 -n com.android.shellms/.sendSMS -e contact "$k" -e msg "$w" > /dev/null
+done
